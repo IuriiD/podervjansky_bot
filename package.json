@@ -1,0 +1,28 @@
+{
+  "name": "poet",
+  "version": "1.0.0",
+  "description": "Telegram-bot using RiveScript answering with phrases from L.Podervjansky stories",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "iurii.dziuban@gmail.com",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/IuriiD/podervjansky_bot.git"
+  },
+  "keywords": [
+    "rivescript",
+    "telegram",
+    "bot",
+    "node",
+    "node",
+    "js",
+    "chatbot"
+  ],
+  "dependencies": {
+    "rivescript": "^2.0.0-alpha.6",
+    "telegraf": "^3.23.0"
+  }
+}
