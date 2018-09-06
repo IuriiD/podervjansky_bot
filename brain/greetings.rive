@@ -1,26 +1,11 @@
 ! version = 2.0
 
-+ hello bot
-- Hello, human!
++ (дякую|спасибі|спасибо|дяк)
+- ["Цікаві досліди", фраза 92]': 'Будь ласка, Мирон Опанасович'
 
-+ who are you
-- I'm a bot{weight=5}
-- I'm a conversation agent{weight=3}
-- I'm a superhero!
-
-+ what is up
-- Not much, you?
-- nm, you?
-- Not a lot, you?
-
-+ you are a bot
-- How did you know I'm a machine?
-
-+ where is *
-- Where it belongs.
-- Where you left it.
-- Where the heart is.
++ (процитуй|включи|покажи|процитуйте|включіть|завантаж|читай|читайте|цитуй) [п'єсу|оповідання|історію] (@stories)
+- Цитую "{formal}<star2>{/formal}"
 
 + *
-- What is <b><star></b>?
-- Sorry I didn't understand
+- '["Гамлєт, або Феномен датського кацапізма", фраза 77]': 'Шось пиздите таке, що не просцяти і за цілий тиждень'
+- '["Гамлєт, або Феномен датського кацапізма", фраза 152]': 'Шо не ясно?'

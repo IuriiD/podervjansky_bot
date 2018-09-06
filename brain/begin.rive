@@ -1,21 +1,39 @@
 ! version = 2.0
 
+! global debug = true
+
+// Bot variables
+! var name = GeniusBot
+
+// Other data
+! array stories = гамлет|гамлєт, або феномен датського кацапізма|гамлєт|масла до хуя|до хуя масла|дохуя масла
+^ масла дохуя|цікаві досліди|досліди|піздєц|піздець|гамлета|гамлєта|пацавата історія|пацавату історію
+^ пацаватая історія|
+
 // Substitutions
 ! sub шо = що
 ! sub єсть = є
-! sub i'm     = i am
-! sub i'd     = i would
-! sub i've    = i have
-! sub i'll    = i will
-! sub don't   = do not
-! sub isn't   = is not
-! sub you'd   = you would
-! sub you're  = you are
-! sub you've  = you have
-! sub you'll  = you will
-! sub what's  = what is
-! sub whats   = what is
-! sub what're = what are
-! sub what've = what have
-! sub what'll = what will
-! sub who's   = who is
+
+> begin
+    + request
+    * <get met> == undefined => <set met=true>{topic=new_user}{ok}
+    - {ok}
+< begin
+
+> topic new_user
+    + *
+    - Здоров! Я <bot name>! В мені - вся мудрість творів пана Леся.\s
+    ^ А вас як звати?{topic=asked_name}
+< topic
+
+> topic asked_name
+    + #
+    - '["Пацавата історія", фраза 249]': 'Не вєрю! Нє вєрю!'
+
+    + (не скажу|секрет|це секрет|не твоє діло)
+    % А вас як звати?
+    - '["Васiлiса Егоровна i мужичкi", фраза 124]': 'Ні, то нє, то я так'
+
+    + *
+    - <set name=<formal>>Ну будем знайомі, <get name>! '["Васiлiса Егоровна i мужичкi", фраза 101]': 'І аб чом же у нас будєт разгавор?',{topic=random}
+< topic
