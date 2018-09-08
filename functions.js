@@ -17,7 +17,7 @@ function getPhrase(phrases, rsReply) {
             }
             if (phraseN!=0) {
                 if  (phrases.hasOwnProperty(phraseN)) {
-                    return rsReply.replace(`phrase${phraseN}`, phrases[phraseN]);
+                    return rsReply.replace(`phrase${phraseN}`, `\n\n${phrases[phraseN]}`);
                     console.log(`Substituted`);
                 } else {
                     return rsReply;

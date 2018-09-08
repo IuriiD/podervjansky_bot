@@ -6,7 +6,6 @@ const Markup = require('telegraf/markup');
 
 const keys = require('./keys');
 const f = require('./functions');
-const projectName = 'Poet';
 const phrases = require('./phrases');
 
 const bot = new Telegraf(keys.TELEGRAM_TOKEN);
@@ -26,12 +25,14 @@ function loading_error (error) {
 }
 
 bot.command(['start'], async ctx => {
+    const userId = ctx.from.id;
     const username = ctx.from.first_name;
-    await ctx.replyWithHTML(`Hi, <b>${username}</b>! I'm a ${projectName}Bot`);
+    let replyFromRS = await riveBot.reply(userId, username);
+    let replyWithSubs = f.getPhrase(phrases, replyFromRS);
+    await ctx.replyWithHTML(replyWithSubs);
 });
 
 bot.on('text', async ctx => {
-    console.log(ctx.message);
     const userId = ctx.from.id;
     let replyFromRS = await riveBot.reply(userId, ctx.message.text);
     let replyWithSubs = f.getPhrase(phrases, replyFromRS);
