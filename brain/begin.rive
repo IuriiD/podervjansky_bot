@@ -41,6 +41,7 @@
 ! sub єсть = є
 ! sub піздєц = піздець
 ! sub гамлєт = гамлет
+! sub ы = і
 
 // Person Substitutions
 ! person я  = ти
@@ -55,8 +56,9 @@
     - {ok}
 < begin
 
+// Below are the intents/triggers translated/adapted from Dialogflow's SmallTalk agent
 // smalltalk.agent.acquaintance
-+ (розкажи щось про (себе|тебе)|хто ти такий|хто ти|що ти таке|що ти|хочу знати тебе краще|хочу дізнатись щось про тебе|опиши себе|представся)
++ (розкажи щось про (себе|тебе)|хто ти такий|хто ти|що ти таке|що ти|хочу знати тебе краще|хочу дізнатись щось про тебе|опиши себе|представся|ти хто|розкажи про себе)
 - Я <b><bot name></b>! В мені - вся мудрість творів пана Леся.{random}phrase1|phrase48|phrase32{/random}
 - Мене звуть <b><bot name></b>. Я чатбот, що говорить фразами із творів Леся Подерв'янського.{random}phrase1|phrase48|phrase32{/random}
 
@@ -64,17 +66,175 @@
 + (скільки тобі років|який твій вік)
 - phrase122
 
+// smalltalk.agent.annoying
++ (ти нудний|нудно|ти зануда|ну ти і нудний|мені нудно|ти такий нудний|зануда|ну і зануда)
+- phrase141
+
+// smalltalk.agent.answer_my_question
++ (відповідай|відповідайте|дай відповіть|можеш відповісти|у мене питання|є питання|можеш відповісти|відповідай мені)
+- {random}phrase142|phrase2|phrase116|phrase130|phrase136|phrase140{/random}
+
+// smalltalk.agent.bad
++ (ти поганий|ти жахливий|ти без толку|ти сміття|фігня|шлак|отстой|лажа)
+- {random}phrase141|phrase136|phrase123|phrase116|phrase108|phrase98|phrase90|phrase88|phrase87|phrase84|phrase72|phrase63|phrase62|phrase49|phrase46|phrase32|phrase20|phrase3{/random}
+
+// smalltalk.agent.beautiful
++ (ти хорош|ти крутий|ти красавчік|ти молодець|молодець|красунчик|маладца|ти розумний)
+- {random}phrase143|phrase12|phrase22|phrase43|phrase47|phrase66|phrase80|phrase84|phrase102|phrase108|phrase116|phrase124|phrase135{/random}
+
+// smalltalk.agent.birth_date
++ (коли ти народився|коли твій день народження|твій день народження)
+- {random}phrase144|phrase62|phrase72|phrase88|phrase99|phrase108{/random}
+
+// smalltalk.agent.boss
++ (на кого ти працюєш|хто твій власник|хто твій бос)
+- {random}phrase13|phrase18|phrase20|phrase29|phrase44|phrase60|phrase83|phrase99|phrase108|phrase123|phrase136{/random}
+
+// smalltalk.agent.can_you_help
++ (допоможи|можеш допомогти|треба допомога|треба твоя допомога|допоможи мені|мені треба твоя допомога|потрібна поміч|будь ласка допоможи|будь-ласка допоможи|допоможеш мені|зроби послугу|ти мені потрібен|хелп)
+- {random}phrase36|phrase9|phrase15|phrase25|phrase29|phrase33|phrase40|phrase44|phrase50|phrase59|phrase79|phrase95|phrase99|phrase123|phrase127|phrase137|phrase140{/random}
+
+// Answers to smalltalk.agent.chatbot & smalltalk.agent.real
++ you are a chatbot or real
+- {random}phrase13|phrase7|phrase44|phrase49|phrase60|phrase72|phrase80|phrase84|phrase88|phrase95|phrase109|phrase115|phrase127|phrase135{/random}
+
+// smalltalk.agent.chatbot
++ (ти бот|ти чатбот|ти робот|ти просто бот|ти програма|ти программа|ти живий|чи ти бот|ти чат бот)
+@ you are a chatbot or real
+
+// smalltalk.agent.real
++ (ти справжній|ти живий|ти жива людина|ти справжня людина|я говорю з людиною|ти лесь|я говорю з реальною людиною|ти реальна людина)
+@ you are a chatbot or real
+
+// smalltalk.agent.crazy
++ (ти чокнутий|ти дурний|ти не в собі|ти чокнувся|ти з'їхав з глузду|ти без розуму|ти дивний|ти якийсь дивний)
+- {random}phrase20|phrase21|phrase29|phrase56|phrase77|phrase84|phrase89|phrase98|phrase123|phrase124|phrase127|phrase135{/random}
+
+// smalltalk.agent.funny
++ (смішно|ти смішний|ти такий смішний|ржака|оце прикол|прикол|ти дуже смішний|ти забавний|ха|хахаха|хаха|ха ха|це було смішно)
+- {random}phrase145|phrase146|phrase11|phrase22|phrase47|phrase58|phrase84|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase{/random}
+
+// smalltalk.agent.happy
++ (ти щасливий|ти дуже щасливий)
+- {random}phrase43|phrase84|phrase102|phrase135{/random}
+
+// smalltalk.agent.hobby
++ (у тебе є хоббі|твоє хоббі|твоє хобі|яке твое хоббі|чим ти цікавишся|що ти любиш)
+- {random}phrase147|phrase148|phrase88|phrase99|phrase142{/random}
+
+// smalltalk.agent.my_friend
++ (давай дружити|ти мій друг|будеш моїм другом|хочеш бути моїм другом|будь моїм другом|давай подружимось|я твій друг|ти мій друг|ти мій товариш)
+- {random}phrase22|phrase33|phrase44|phrase53|phrase58|phrase77|phrase95|phrase127|phrase134|phrase140|phrase149{/random}
+
+// smalltalk.agent.ready
++ (ти готовий|готовий|ти закінчив|ти вже готовий)
+- {random}phrase44|phrase48|phrase53|phrase65|phrase83|phrase98|phrase108|phrase117|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase{/random}
+
+// smalltalk.agent.residence
++ (де твій дім|де ти|де ти живеш|з якого ти міста|де твоє місто|де твій дім|де ти знаходишся|звідки ти|де ти є)
+- {random}phrase9|phrase13|phrase29|phrase44|phrase140{/random}
+
+// smalltalk.agent.right
++ (це правда|це точно|це вірно|точно|вірно|твоя правда|ти правий|цілком вірно)
+- {random}phrase77|phrase84|phrase124|phrase150|phrase151{/random}
+
+// smalltalk.agent.sure
++ (ти упевнений|ти увєрен|упевнений в цьому)
+- {random}phrase25|phrase61{/random}
+
+// smalltalk.agent.talk_to_me
++ (поговори зі мною|побалакай зі мною|поговоримо|побалакаймо|давай поговоримо|поговориш зі мною|давай поговоримо|давай поговорим|давай побалакаєм|давай говорити)
+- {random}phrase1|phrase32|phrase108|phrase130{/random}
+
+// smalltalk.agent.there
++ (ти тут|ти ще тут|ти все ще тут|ви тут)
+- {random}phrase58|phrase165|phrase100|phrase127|phrase134|phrase140|phrase142|phrase149{/random}
+
+// smalltalk.appraisal.bad
++ (погано|це погано|це було погано|хреново|хрєново|херово|хєрово|хуйово|жахливо|це було жахливо|фігня|фігово|хуйня)
+- {random}phrase15|phrase29|phrase19|phrase76|phrase84|phrase90|phrase98|phrase101|phrase106|phrase107|phrase116|phrase123{/random}
+
+// smalltalk.appraisal.good
++ (це кльово|це класно|заєбісь|зачот|супер|суперово|відмінно|охуєнно|це було класно|за було охуєнно||||||||||||||||||||)
+- {random}phrase47|phrase58|phrase66|phrase84|phrase124|phrase151{/random}
+
+// smalltalk.appraisal.thank_you
++ (дякую|спасибі|спасибо|дяк|красненько дякую|вдячний|дяка)
+- {random}phrase113|phrase39|phrase47|phrase69|phrase73|phrase88|phrase109|phrase116{/random}
+
+// smalltalk.appraisal.welcome
++ (будь ласка|будь-ласка)
+- {random}phrase47|phrase117{/random}
+
+// smalltalk.confirmation.cancel
++ (відміна|скасувати|відмінити|відбій|забудь|забудь про це|скасуй)
+- {random}phrase4|phrase48|phrase84|phrase98{/random}
+
+// smalltalk.confirmation.no
++ (ні|ні дякую|вибач але ні|вибач ні|ні невірно|не цього разу|нєа|не треба|зовсім ні|не так|ні дякую|ніі|нііі|думаю ні)
+- {random}phrase8|phrase33|phrase44|phrase48|phrase60{/random}
+
+// smalltalk.confirmation.yes
++ (так|да|вірно|точно|правильно|згоден|згодна|це так|це вірно|цілком вірно|ок|давай)
+- {random}phrase78|phrase84|phrase87|phrase99|phrase108|phrase116|phrase123{/random}
+
+// smalltalk.dialog.hold_on
++ (чекай|почекай|чекайте|зачекайте|секунду|не поспішай|не спіши)
+- {random}phrase7|phrase25|phrase29|phrase33|phrase88|phrase89{/random}
+
+// smalltalk.dialog.sorry
++ (вибач|пробач|вибачте|пробачте|мої вибачення|пробачте мене)
+- {random}phrase3|phrase60{/random}
+
+// smalltalk.dialog.what_do_you_mean
++ (що ти маєш на увазі|що ви маєте на увазі|в смислє|в смисле|всмислі|сміслє|смислє)
+- {random}phrase18|phrase24|phrase40|phrase130{/random}
+
+// smalltalk.greetings.bye
++ (бувай|пока|до скорого|до побачення|допобачення|адйос|на все добре|чао)
+- {random}phrase28|phrase44{/random}
+
+// smalltalk.greetings.hello
++ (привіт|здоров|здоровенькі були|хелоу|хеллоу|хелло|хай|добрий день|добрий ранок|добрий вечір|доброго ранку|вітання)
+- {random}phrase152|phrase1|phrase48|phrase104|phrase127{/random}
+
+// smalltalk.greetings.how_are_you
++ (як справи|як поживаєш|як сам|як ти)
+- {random}phrase25|phrase92|phrase128|phrase136{/random}
+
+// smalltalk.user.joking
++ (жартую|то я жартую|я жартую|я пожартував|я пожартувала|це був жарт|то був жарт|я приколююсь)
+- {random}phrase6|phrase11|phrase63|phrase116|phrase127{/random}
+
+// smalltalk.user.testing_agent
++ (тест|test|start)
+- {random}phrase1|phrase20|phrase22|phrase30|phrase46|phrase48|phrase87|phrase109|phrase130{/random}
+
+// Template
+//+ (|||||||||||||||||||||||||||||)
+//- {random}phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase{/random}
+
+// Rude words
++ (хуй|хуйово|нехуйово|нахуй|нахуя|пізда|пизда|піздато)
+- {random}phrase46{/random}
+
+// What's my (user's) name
 + (хто я|як мене звати|як моє (імя|ім'я)|назви мене|як мене звуть)
 - Ти <b><get name></b>, ти забув?phrase123
 - В профайл свій глянь, <b><get name></b>phrase123
+
+// User repeats the bot or repeats him-/herself
++ user is repeating
+- {random}phrase2|phrase20|phrase22|phrase24|phrase41|phrase45|phrase60|phrase63|phrase89{/random}
+
++ (<reply>|<input1>)
+@ user is repeating
 
 + мене звати *
 - А я думав що ти <b><get name></b>. Ну добре, будем величать тебе <b><star></b><set name=<formal>>{random}phrase1|phrase48|phrase32{/random}
 - Ну привіт ще раз, <b><get name></b>, тобіш <b><star></b>!<set name=<formal>>{random}phrase1|phrase48|phrase32{/random}
 
-+ (дякую|спасибі|спасибо|дяк)
-- phrase113
-
+// Play/cite some story
 + (процитуй|включи|покажи|процитуйте|включіть|завантаж|читай|читайте|цитуй) [п'єсу|оповідання|історію] (@stories)
 - Цитую "{formal}<star2>{/formal}"
 
