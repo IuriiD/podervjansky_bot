@@ -1,6 +1,6 @@
 ! version = 2.0
 
-! global debug = true
+! global debug = false
 
 // Bot variables
 ! var name = DuhPoeta
@@ -241,7 +241,7 @@
 // 'Default Fallback'
 + *
 // Response to /start command (where we pass username)
-* <get name> == undefined => <set name=<formal>>Здоров, <b><formal></b>! {random}Я <b><bot name></b>! В мені - вся мудрість творів пана Леся.|Мене звуть <b><bot name></b>. Я чатбот, що говорить фразами із творів Леся Подерв'янського.{/random}
+* <get name> == undefined => <set name=<formal>>Здоров, <b><formal></b>! {random}Я <b><bot name></b>! В мені - вся мудрість творів пана Леся|Мене звуть <b><bot name></b>. Я чатбот, що говорить фразами із творів Леся Подерв'янського{/random}\s
 ^ {random}phrase1|phrase48|phrase32{/random}
 // Default fallback itself
 - {random}phrase20|phrase24|phrase30|phrase59|phrase76|phrase82|phrase87|phrase89|phrase96|phrase99|phrase108|phrase109|phrase116{/random}
