@@ -31,6 +31,7 @@ function getPhrase(phrases, rsReply) {
     return rsReply;
 }
 
+
 module.exports = {
     getPhrase
 };

@@ -3,6 +3,7 @@
 const RiveScript = require('rivescript');
 const Telegraf = require('telegraf');
 const Markup = require('telegraf/markup');
+const Extra = require('telegraf/extra');
 
 const keys = require('./keys');
 const f = require('./functions');
@@ -29,16 +30,37 @@ bot.command(['start'], async ctx => {
     const username = ctx.from.first_name;
     let replyFromRS = await riveBot.reply(userId, username);
     let replyWithSubs = f.getPhrase(phrases, replyFromRS);
-    await ctx.replyWithHTML(replyWithSubs);
+    console.log(`\n\n\n${JSON.stringify(replyWithSubs)}`);
+    if (replyWithSubs.text) {
+        await ctx.replyWithHTML(replyWithSubs.text);
+    }
+    if (replyWithSubs.sticker) {
+        await ctx.replyWithSticker('CAADAgADBAAD09KeCnfMl_xO0kSQAg', Extra.HTML().markup((m) =>
+            m.inlineKeyboard([
+                m.callbackButton('Слухати', '#listen'),
+                m.callbackButton('Читати', '#read')
+            ])));
+    }
 });
 
 bot.on('text', async ctx => {
     const userId = ctx.from.id;
     let replyFromRS = await riveBot.reply(userId, ctx.message.text);
     let replyWithSubs = f.getPhrase(phrases, replyFromRS);
-    console.log(`replyFromRS: ${replyFromRS}\nreplyWithSubs: ${replyWithSubs}`);
-    await ctx.replyWithHTML(replyWithSubs);
+    console.log(`\n\n\n${JSON.stringify(replyWithSubs)}`);
+    if (replyWithSubs.text) {
+        await ctx.replyWithHTML(replyWithSubs.text);
+    }
+    if (replyWithSubs.sticker) {
+        await ctx.replyWithSticker('CAADAgADAwAD09KeCpV7FIvkzeffAg');
+        await ctx.replyWithHTML(replyWithSubs.sticker, Extra.HTML().markup((m) =>
+            m.inlineKeyboard([
+                m.callbackButton('Слухати', '#listen'),
+                m.callbackButton('Читати', '#read')
+            ])))
+    }
 });
+
 
 bot.on('sticker', async ctx => {
     console.log(ctx.message);
