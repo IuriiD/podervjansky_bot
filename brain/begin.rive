@@ -1,6 +1,6 @@
 ! version = 2.0
 
-! global debug = true
+! global debug = false
 
 // Bot variables
 ! var name = DuhPoeta
@@ -15,7 +15,7 @@
 ^ герой нашого часу|героя нашого часу|героя
 ^ данко
 ^ кацапи|кацапів|кацапов
-^ місце встрєчі ізменіть ніззя блять|місце встречі|місце встрєчі|місце встречі ізменіть ніззя [*]
+^ місце встрєчі ізменіть ніззя блять|місце встречі|місце встрєчі|місце встречі ізменіть ніззя
 ^ хвороба івасика|хворобу івасика|івасика
 ^ павлік морозов|павліка|павліка морозова
 ^ остановісь мгновєнье ти прєкрасно|остановісь мгновеніє|остановісь мгновеніє ти прекрасно|остановісь мгновеніє
@@ -112,7 +112,7 @@
 
 // smalltalk.agent.funny
 + (смішно|ти смішний|ти такий смішний|ржака|оце прикол|прикол|ти дуже смішний|ти забавний|ха|хахаха|хаха|ха ха|це було смішно)
-- {random}phrase145|phrase146|phrase11|phrase22|phrase47|phrase58|phrase84|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase{/random}
+- {random}phrase145|phrase146|phrase11|phrase22|phrase47|phrase58|phrase84{/random}
 
 // smalltalk.agent.happy
 + (ти щасливий|ти дуже щасливий)
@@ -128,7 +128,7 @@
 
 // smalltalk.agent.ready
 + (ти готовий|готовий|ти закінчив|ти вже готовий)
-- {random}phrase44|phrase48|phrase53|phrase65|phrase83|phrase98|phrase108|phrase117|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase{/random}
+- {random}phrase44|phrase48|phrase53|phrase65|phrase83|phrase98|phrase108|phrase117{/random}
 
 // smalltalk.agent.residence
 + (де твій дім|де ти|де ти живеш|з якого ти міста|де твоє місто|де твій дім|де ти знаходишся|звідки ти|де ти є)
@@ -155,7 +155,7 @@
 - {random}phrase15|phrase29|phrase19|phrase76|phrase84|phrase90|phrase98|phrase101|phrase106|phrase107|phrase116|phrase123{/random}
 
 // smalltalk.appraisal.good
-+ (це кльово|це класно|заєбісь|зачот|супер|суперово|відмінно|охуєнно|це було класно|за було охуєнно||||||||||||||||||||)
++ (це кльово|це класно|заєбісь|зачот|супер|суперово|відмінно|охуєнно|це було класно|за було охуєнно)
 - {random}phrase47|phrase58|phrase66|phrase84|phrase124|phrase151{/random}
 
 // smalltalk.appraisal.thank_you
@@ -241,7 +241,7 @@
 // 'Default Fallback'
 + *
 // Response to /start command (where we pass username)
-* <get name> == undefined => <set name=<formal>>Здоров, <b><formal></b>! {random}Я <b><bot name></b>! В мені - вся мудрість творів пана Леся.|Мене звуть <b><bot name></b>. Я чатбот, що говорить фразами із творів Леся Подерв'янського.{/random}
+* <get name> == undefined => <set name=<formal>>Здоров, <b><formal></b>! {random}Я <b><bot name></b>! В мені - вся мудрість творів пана Леся|Мене звуть <b><bot name></b>. Я чатбот, що говорить фразами із творів Леся Подерв'янського{/random}\s
 ^ {random}phrase1|phrase48|phrase32{/random}
 // Default fallback itself
 - {random}phrase20|phrase24|phrase30|phrase59|phrase76|phrase82|phrase87|phrase89|phrase96|phrase99|phrase108|phrase109|phrase116{/random}
