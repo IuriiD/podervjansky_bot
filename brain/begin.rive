@@ -112,7 +112,7 @@
 
 // smalltalk.agent.funny
 + (смішно|ти смішний|ти такий смішний|ржака|оце прикол|прикол|ти дуже смішний|ти забавний|ха|хахаха|хаха|ха ха|це було смішно)
-- {random}phrase145|phrase146|phrase11|phrase22|phrase47|phrase58|phrase84{/random}
+- {random}phrase146|phrase11|phrase22|phrase47|phrase58|phrase84{/random}
 
 // smalltalk.agent.happy
 + (ти щасливий|ти дуже щасливий)
