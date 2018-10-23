@@ -120,7 +120,7 @@
 
 // smalltalk.agent.hobby
 + (у тебе є хоббі|твоє хоббі|твоє хобі|яке твое хоббі|чим ти цікавишся|що ти любиш)
-- {random}phrase147|phrase148|phrase88|phrase99|phrase142{/random}
+- {random}phrase147|phrase88|phrase99|phrase142{/random}
 
 // smalltalk.agent.my_friend
 + (давай дружити|ти мій друг|будеш моїм другом|хочеш бути моїм другом|будь моїм другом|давай подружимось|я твій друг|ти мій друг|ти мій товариш)
