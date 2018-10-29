@@ -1,10 +1,11 @@
 {
   "name": "poet",
   "version": "1.0.0",
-  "description": "Telegram-bot using RiveScript answering with phrases from L.Podervjansky stories",
+  "description": "Telegram-bot answering with phrases from L.Podervjansky plays",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "author": "iurii.dziuban@gmail.com",
   "license": "ISC",
@@ -17,12 +18,19 @@
     "telegram",
     "bot",
     "node",
-    "node",
-    "js",
+    "node.js",
     "chatbot"
   ],
   "dependencies": {
     "rivescript": "^2.0.0-alpha.6",
-    "telegraf": "^3.23.0"
+    "telegraf": "^3.23.0",
+    "dotenv": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.18.5",
+    "prettier": "^1.14.3"
   }
 }
