@@ -210,10 +210,6 @@
 + (тест|test|start)
 - {random}phrase1|phrase20|phrase22|phrase30|phrase46|phrase48|phrase87|phrase109|phrase130{/random}
 
-// Template
-//+ (|||||||||||||||||||||||||||||)
-//- {random}phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase|phrase{/random}
-
 // Rude words
 + (хуй|хуйово|нехуйово|нахуй|нахуя|пізда|пизда|піздато)
 - {random}phrase46{/random}
@@ -235,7 +231,7 @@
 - Ну привіт ще раз, <b><get name></b>, тобіш <b><star></b>!<set name=<formal>>{random}phrase1|phrase48|phrase32{/random}
 
 // Play/cite some story
-+ (процитуй|включи|покажи|процитуйте|включіть|завантаж|читай|читайте|цитуй) [п'єсу|оповідання|історію] (@stories)
++ (відкрий|процитуй|включи|покажи|процитуйте|включіть|завантаж|читай|читайте|цитуй) [п'єсу|оповідання|історію] (@stories)
 - Цитую "{formal}<star2>{/formal}"
 
 // 'Default Fallback'
@@ -244,4 +240,4 @@
 * <get name> == undefined => <set name=<formal>>Здоров, <b><formal></b>! {random}Я <b><bot name></b>! В мені - вся мудрість творів пана Леся|Мене звуть <b><bot name></b>. Я чатбот, що говорить фразами із творів Леся Подерв'янського{/random}\s
 ^ {random}phrase1|phrase48|phrase32{/random}
 // Default fallback itself
-- {random}phrase20|phrase24|phrase30|phrase59|phrase76|phrase82|phrase87|phrase89|phrase96|phrase99|phrase108|phrase109|phrase116{/random}
+- Defaultfallback{random}phrase20|phrase24|phrase30|phrase59|phrase76|phrase82|phrase87|phrase89|phrase96|phrase99|phrase108|phrase109|phrase116{/random}
