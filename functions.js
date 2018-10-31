@@ -19,11 +19,11 @@ function getPhrase(phrases, rsReply) {
     for (let i = 0; i < rsReplySplit.length; i++) {
       if (rsReplySplit[i].includes('phrase')) {
         try {
-          phraseN = parseInt(rsReplySplit[i].split('phrase')[1]);
+          phraseN = rsReplySplit[i].split('phrase')[1];
 
           if (phraseN !== 0) {
             if (phrases.hasOwnProperty(phraseN)) {
-              output.sticker = phrases.phraseN.telegramStickerId;
+              output.sticker = phrases[phraseN].telegramStickerId;
             }
           }
         } catch (err) {

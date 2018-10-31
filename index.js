@@ -6,6 +6,8 @@ const Extra = require('telegraf/extra');
 const f = require('./functions');
 const phrases = require('./phrases');
 
+console.log(process.env.TELEGRAM_TOKEN);
+
 const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
 const riveBot = new RiveScript({ utf8: true });
@@ -27,14 +29,17 @@ riveBot
 bot.command(['start'], async (ctx) => {
   const username = ctx.from.first_name;
   const introPhrases = [
-    `Привіт, ${username}. Я <b><bot name></b>! В мені - вся мудрість творів пана Леся`,
-    `Привіт, ${username}. Мене звуть <b><bot name></b>. Я чатбот, що говорить фразами із творів Леся Подерв'янського`,
+    `Привіт, ${username}. Я <b>bot name</b>! В мені - вся мудрість творів пана Леся`,
+    `Привіт, ${username}. Мене звуть <b>bot name</b>. Я чатбот, що говорить фразами із творів Леся Подерв'янського`,
   ];
   const introStickers = ['1', '32', '48'];
   const randomWelcomePhrase = Math.round(Math.random() * introPhrases.length);
   const randomWelcomeSticker = Math.round(Math.random() * introStickers.length);
+  console.log(`randomWelcomePhraseKey: ${randomWelcomePhrase}`);
+  console.log(`randomWelcomePhrase: ${introPhrases[randomWelcomePhrase]}`);
 
   await ctx.replyWithHTML(introPhrases[randomWelcomePhrase]);
+  
   await ctx.replyWithSticker(
     phrases[introStickers[randomWelcomeSticker.toString()]].telegramStickerId,
     Extra.HTML().markup(m => m.inlineKeyboard([
@@ -49,7 +54,7 @@ bot.on('text', async (ctx) => {
   const replyFromRS = await riveBot.reply(userId, ctx.message.text);
   console.log(`User wrote: ${ctx.message.text}`);
   const replyWithSubs = f.getPhrase(phrases, replyFromRS);
-  console.log(`\n${JSON.stringify(replyWithSubs)}`);
+  console.log(`\nreplyWithSubs: ${JSON.stringify(replyWithSubs)}`);
 
   if (replyWithSubs.text) {
     await ctx.replyWithHTML(replyWithSubs.text);

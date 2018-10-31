@@ -262,7 +262,7 @@ module.exports = {
     phrase: 'Ти посмотрі, какой он бистрий',
     play: 'Герой нашого часу. Повість перша',
     phraseN: '102',
-    telegramStickerId: '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%',
+    telegramStickerId: 'CAADAgADawAD09KeCkkf2mSyh71nAg',
   },
   45: {
     phrase: 'Хорош пиздєть',
@@ -274,7 +274,7 @@ module.exports = {
     phrase: 'А хто ви такой, пришлі, матюкаєтесь тут, шо такоє?',
     play: 'Герой нашого часу. Повість перша',
     phraseN: '108',
-    telegramStickerId: '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%',
+    telegramStickerId: 'CAADAgADbAAD09KeCvuPXCPSL-0-Ag',
   },
   47: {
     phrase: 'Шо, нравіца? На!',
@@ -901,7 +901,7 @@ module.exports = {
     phrase: 'Звідки ви знаєте, дядя?',
     play: 'Піздєц',
     phraseN: '250',
-    telegramStickerId: '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%',
+    telegramStickerId: 'CAADAgADbQAD09KeCt69yJiAUE9hAg',
   },
   151: {
     phrase: 'Правда, дядя Савка?',
@@ -913,6 +913,6 @@ module.exports = {
     phrase: 'Привіт, “Компана”! Я вам почитати принесла!',
     play: 'Нірвана',
     phraseN: '170',
-    telegramStickerId: '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%',
+    telegramStickerId: 'CAADAgADbgAD09KeCmzHccGwfg9-Ag',
   },
 };
