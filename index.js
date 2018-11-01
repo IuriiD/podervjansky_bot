@@ -39,7 +39,7 @@ bot.command(['start'], async (ctx) => {
   console.log(`randomWelcomePhrase: ${introPhrases[randomWelcomePhrase]}`);
 
   await ctx.replyWithHTML(introPhrases[randomWelcomePhrase]);
-  
+
   await ctx.replyWithSticker(
     phrases[introStickers[randomWelcomeSticker.toString()]].telegramStickerId,
     Extra.HTML().markup(m => m.inlineKeyboard([
@@ -59,15 +59,23 @@ bot.on('text', async (ctx) => {
   if (replyWithSubs.text) {
     await ctx.replyWithHTML(replyWithSubs.text);
   }
+
   if (replyWithSubs.sticker) {
-    await ctx.replyWithSticker(replyWithSubs.sticker);
-    await ctx.replyWithHTML(
+    await ctx.replyWithSticker(
       replyWithSubs.sticker,
       Extra.HTML().markup(m => m.inlineKeyboard([
         m.callbackButton('Слухати', '#listen'),
         m.callbackButton('Читати', '#read'),
       ])),
     );
+    /*
+    await ctx.replyWithHTML(
+      replyWithSubs.sticker,
+      Extra.HTML().markup(m => m.inlineKeyboard([
+        m.callbackButton('Слухати', '#listen'),
+        m.callbackButton('Читати', '#read'),
+      ])),
+    ); */
   }
 });
 
